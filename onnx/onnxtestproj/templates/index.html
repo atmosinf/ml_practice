@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+</head>
+<body>
+    <h1>this is index</h1>
+    <input type="number" id="inpnum">
+    <button id="btn1">submit</button>
+    <p>original function: 3x + 3</p>
+    <p>prediction:</p>
+    <p id="pred"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs@0.1.8/dist/onnx.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
