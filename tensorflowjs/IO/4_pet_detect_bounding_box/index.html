@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <div style="position: relative; height: 80vh">
+    <img id="img1" src="dog.jpg" alt="">
+    <canvas id="canvas1"
+    style="position: absolute; left: 0"></canvas>
+    </div>
+
+    <script>
+        tf.ready().then(() => {
+            const modelpath = 'model/tfjs_quant_uint8/model.json';
+            tf.tidy(() => {
+                tf.loadLayersModel(modelpath).then((model) => {
+                    const img = document.querySelector('#img1');
+                    const imgtensor = tf.browser.fromPixels(img);
+                    const transformed = tf.image.resizeNearestNeighbor(imgtensor, [256,256], true)
+                                                .div(255)
+                                                .reshape([1,256,256,3]);
+
+                    const result = model.predict(transformed);
+
+                    result.print();
+
+                    const canvas = document.querySelector('#canvas1');
+                    const imgwidth = img.width
+                    const imgheight = img.height
+                    canvas.width = imgwidth
+                    canvas.height = imgheight
+                    const box = result.dataSync()
+                    const startx = box[0] * imgwidth
+                    const starty = box[1] * imgheight
+                    const width = (box[2] - box[0]) * imgwidth
+                    const height = (box[3] - box[1]) * imgheight
+                    const ctx = canvas.getContext('2d')
+                    ctx.strokeStyle = '#0F0'
+                    ctx.lineWidth = 4
+                    ctx.strokeRect(startx, starty, width, height)
+                })
+            })
+        })
+        
+    </script>
+</body>
+</html>
