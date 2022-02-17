@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <h1>Images to Tensors</h1>
+    <h3>Our DOM image:</h3>
+    <img id="image" src="cake.jpeg" />
+    <script>
+        window.addEventListener('load', function () {
+          tf.tidy(() => {
+            // Simply read from the DOM
+            const gantImage = document.getElementById('image')
+            const gantTensor = tf.browser.fromPixels(gantImage)
+            console.log(
+              `Successful conversion from DOM to a ${gantTensor.shape} tensor`
+            )
+  
+            // Now load an image object in JavaScript
+            const cake = new Image()
+            cake.crossOrigin = 'anonymous'
+            cake.src = 'cake.jpeg'
+            cake.onload = () => {
+              const cakeTensor = tf.browser.fromPixels(cake)
+              console.log(
+                `Successful conversion from Image() to a ${cakeTensor.shape} tensor`
+              )
+            }
+          })
+        })
+      </script>
+</body>
+</html>
