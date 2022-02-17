@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <img id="img1" src="toucan.jpeg" alt="">
+    
+    <script type="module">
+    import { INCEPTION_CLASSES } from './labels.js'
+    tf.ready().then(() => {
+        const modelpath = 'https://tfhub.dev/google/tfjs-model/imagenet/inception_v3/classification/3/default/1';
+
+        tf.tidy(() => {
+            tf.loadGraphModel(modelpath, {fromTFHub: true}).then((model) => {
+                const image = document.querySelector('#img1');
+                const imgtensor = tf.browser.fromPixels(image);
+                const transformed = tf.image
+                                        .resizeBilinear(imgtensor, [299,299], true)
+                                        .div(255)
+                                        .reshape([1, 299, 299, 3]);
+                
+                const result = model.predict(transformed);
+                result.print();
+
+                const {values, indices} = tf.topk(result, 3);
+                indices.print();
+
+                const winners = indices.dataSync();
+                console.log(`first place: ${INCEPTION_CLASSES[winners[0]]}\n,second place: ${INCEPTION_CLASSES[winners[1]]}\n,third place: ${INCEPTION_CLASSES[winners[2]]}`);
+            })
+        })
+
+    })
+
+    </script>
+</body>
+</html>
