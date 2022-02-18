@@ -7,7 +7,7 @@ the pytorch model was converted to onnx, to tensorflow and finally to a tensorfl
 ![2](screenshots/2.png)<br><br>
 note: in the image above, the saved_model folder is not the tensorflow saved model. it is the folder (which i created), in which the pytorch model is saved. the tensorflow savedmodel is vggnet.pb. and the onnx saved model is vggnet.onnx, and the tfjs saved model is in the tfjsmodel folder
 
-![2](screenshots/2.png)<br><br>
+![3](screenshots/3.png)<br><br>
 tfjs model is saved like this, in shards.
 
 ### tfjs code to load the model index.html
