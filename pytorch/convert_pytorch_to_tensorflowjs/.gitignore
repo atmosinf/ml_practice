@@ -1,3 +1,4 @@
 tfjsmodel
 vggnet.pb
 vggnet.onnx
+tfjsmodel_uncompressed
