@@ -8,3 +8,6 @@ learn how to use the pytorch built-in CIFAR10 dataset. keywords: train test vali
 
 ## transfer learning
 keywords: train test split an ImageFolder, transfer learning on mobilenetv3, freeze layers, learning rate scheduler, workaround for different transforms in ImageFolder which uses a random_split for train and test data and does not have separate folders for train and test. this will be useful when you use data augmentation in such a scenario (when the data for ImageFolder is in a single folder, rather than split into train and test)
+
+## neural style transfer
+neural style transfer is a great place to check the impact of a learning rate scheduler. check the notebook and the images to see the difference between training with a scheduler and without. keywords: PIL, lr, lr_scheduler.StepLR, gram matrix
