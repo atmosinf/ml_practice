@@ -16,18 +16,18 @@
 
 ### last 5 images without lr scheduler
 <p float="left">
-  <img src="screenshots/generate1_1000.png" width="100" /> 
-  <img src="screenshots/generate1_1200.png" width="100" />
-  <img src="screenshots/generate1_1400.png" width="100" />
-  <img src="screenshots/generate1_1600.png" width="100" />
-  <img src="screenshots/generate1_1800.png" width="100" />
+  <img src="screenshots/generate1_1000.png" width="150" /> 
+  <img src="screenshots/generate1_1200.png" width="150" />
+  <img src="screenshots/generate1_1400.png" width="150" />
+  <img src="screenshots/generate1_1600.png" width="150" />
+  <img src="screenshots/generate1_1800.png" width="150" />
 </p>
 
 ### last 5 images with lr scheduler
 <p float="left">
-  <img src="screenshots/generate1_lr_1000.png" width="100" /> 
-  <img src="screenshots/generate1_lr_1200.png" width="100" />
-  <img src="screenshots/generate1_lr_1400.png" width="100" />
-  <img src="screenshots/generate1_lr_1600.png" width="100" />
-  <img src="screenshots/generate1_lr_1800.png" width="100" />
+  <img src="screenshots/generate1_lr_1000.png" width="150" /> 
+  <img src="screenshots/generate1_lr_1200.png" width="150" />
+  <img src="screenshots/generate1_lr_1400.png" width="150" />
+  <img src="screenshots/generate1_lr_1600.png" width="150" />
+  <img src="screenshots/generate1_lr_1800.png" width="150" />
 </p>
