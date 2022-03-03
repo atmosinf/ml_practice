@@ -1,5 +1,7 @@
 # ml_practice
 
+---
+
 # pytorch
 
 ## built in datasets
@@ -11,3 +13,5 @@ keywords: train test split an ImageFolder, transfer learning on mobilenetv3, fre
 
 ## neural style transfer
 neural style transfer is a great place to check the impact of a learning rate scheduler. check the notebook and the images to see the difference between training with a scheduler and without. keywords: PIL, lr, lr_scheduler.StepLR, gram matrix
+
+---
