@@ -18,4 +18,7 @@ neural style transfer is a great place to check the impact of a learning rate sc
 ### IOU
 calculate intersection over union. learn to create rectangles in matplotlib using matplotlib.patches.Rectangle and ax.add_patches. use plt.gca().invert_yaxis() to set the origin at top left. this is done because in computer vision, the origin is usually kept at the top left. keywords: iou, intersection, union, .clip(), matplotlib.patches
 
+### object localization
+notebook run in kaggle. used a dataset that provided the object location (x1,y1,x2,y2) and created a simple model that predicts the output. MSELoss was used.  
+
 ---
