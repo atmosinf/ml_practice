@@ -6,4 +6,4 @@
 
 <br><br>
 Got train.py to run, but mAP doesnt seem to work correctly<br>
-![1](screenshots\1.png)
+![1](screenshots/1.png)
