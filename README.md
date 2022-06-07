@@ -21,4 +21,8 @@ calculate intersection over union. learn to create rectangles in matplotlib usin
 ### object localization
 notebook run in kaggle. used a dataset that provided the object location (x1,y1,x2,y2) and created a simple model that predicts the output. MSELoss was used.  
 
+### YOLOv1
+#### dataset.py and dataset_test.ipynb
+create a custom dateset for the PASCAL VOC data. raw data has bbox in coordinates, the custom dataset returns the bboxes relative to the grid cell, with the midpoint and height and width. keywords: object detection dataset
+
 ---
