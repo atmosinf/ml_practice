@@ -18,6 +18,10 @@ neural style transfer is a great place to check the impact of a learning rate sc
 ### albumentations
 learn to use the albumentations library for image data augmentation. keywords: augmentation, masks, segmentation, object detection, custom ImageFolder (this does not inherit the ImageFolder, but inherits from torch.utils.data.Dataset. was probably done to allow the usage of transforms) 
 
+## segmentation
+### U_NET
+keywords: float16 training to reduce VRAM (check train.py, forward pass), dice score in utils.py, check_accuracy
+
 ## object detection
 ### IOU
 calculate intersection over union. learn to create rectangles in matplotlib using matplotlib.patches.Rectangle and ax.add_patches. use plt.gca().invert_yaxis() to set the origin at top left. this is done because in computer vision, the origin is usually kept at the top left. keywords: iou, intersection, union, .clip(), matplotlib.patches
