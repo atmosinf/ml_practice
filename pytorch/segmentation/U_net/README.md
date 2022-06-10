@@ -12,6 +12,6 @@ same convolution. so we can say that we're not losing too much performance by us
 NOTE: for the validation dataset, i cut-pasted some images and masks from the train dataset.<br><br>
 
 
-### train.py runs, but fails due to lack of memory and because cude is not present
+### train.py runs, but fails due to lack of memory and because cuda is not present
 ![1](screenshots/1.png)<br>
 ![2](screenshots/2.png)<br>
