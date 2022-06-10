@@ -13,5 +13,5 @@ NOTE: for the validation dataset, i cut-pasted some images and masks from the tr
 
 
 ### train.py runs, but fails due to lack of memory and because cude is not present
-![1][screenshots/1.png]<br>
-![2][screenshots/2.png]<br>
+![1](screenshots/1.png)<br>
+![2](screenshots/2.png)<br>
