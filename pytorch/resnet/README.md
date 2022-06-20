@@ -5,5 +5,5 @@
 
 <br><br>
 
-### the 50 layer restnet was implemented
+### resnet architectures
 ![1](screenshots/1.png)
