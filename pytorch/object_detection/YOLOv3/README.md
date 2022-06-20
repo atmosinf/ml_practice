@@ -5,4 +5,7 @@
 [github](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/object_detection/YOLOv3) <br>
 
 #### architecture
-![1](screenshots/1.png)
+![1](screenshots/1.png) <br>
+
+#### training.py
+![2](screenshots/15.png) <br>
