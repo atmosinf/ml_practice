@@ -6,3 +6,6 @@ The images after they're saved by PIL will also be smaller in size
 <br>
 
 ![1](screenshots/1.png)<br>
+
+#### directory structure example (git does not add empty folders. images were excluded with the gitignore)
+![1](screenshots/2.png)<br>
