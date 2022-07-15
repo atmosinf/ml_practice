@@ -80,17 +80,26 @@ class ResNet(nn.Module):
 
     def forward(self, x):
         x = self.conv1(x)
+        print('shape after 1st conv:\n', x.shape)
         x = self.bn1(x)
         x = self.relu(x)
         x = self.maxpool(x)
+        print('shape after 1st maxpool:\n', x.shape)
         x = self.layer1(x)
+        print('shape after 1st block:\n', x.shape)
         x = self.layer2(x)
+        print('shape after 2nd block:\n', x.shape)
         x = self.layer3(x)
+        print('shape after 3rd block:\n', x.shape)
         x = self.layer4(x)
+        print('shape after 4th block:\n', x.shape)
 
         x = self.avgpool(x)
+        print('shape after adaptiveaveragepool:\n', x.shape)
         x = x.reshape(x.shape[0], -1)
+        print('shape after reshape before fc:\n', x.shape)
         x = self.fc(x)
+        print('output shape:\n', x.shape)
 
         return x
 
@@ -119,6 +128,7 @@ class ResNet(nn.Module):
 
         # The expansion size is always 4 for ResNet 50,101,152
         self.in_channels = intermediate_channels * 4
+        print('in_channels after mult:', self.in_channels)
 
         # For example for first resnet layer: 256 will be mapped to 64 as intermediate layer,
         # then finally back to 256. Hence no identity downsample is needed, since stride = 1,
@@ -147,4 +157,10 @@ def test():
     print(y.size())
 
 
-test()
+# test()
+
+model = ResNet(Block, [3, 4, 6, 3], 3, 1000)
+print(model)
+
+input = torch.randn((1, 3, 1000, 1000))
+print('output shape:\n',model(input).shape)
