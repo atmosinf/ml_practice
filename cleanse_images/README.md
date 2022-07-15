@@ -5,4 +5,4 @@ This will get rid of all corrupt images (corrupt images might cause a model trai
 The images after they're saved by PIL will also be smaller in size
 <br>
 
-![1](screenshots/1.jpg)<br>
+![1](screenshots/1.png)<br>
