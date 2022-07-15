@@ -1,6 +1,12 @@
 # ml_practice
 
 ---
+# cleanse_images
+Create a function that copies over a folder (preserving the folder hierachy) with all its images, saving each image using PIL. 
+This will get rid of all corrupt images (corrupt images might cause a model training session to crash in the middle of training).
+The images after they're saved by PIL will also be smaller in size
+keywords: clean JPG, remove corrupted JPG, save JPG as jpg using PIL Image, compress JPG, make image smaller,
+---
 
 # pytorch
 
