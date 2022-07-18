@@ -13,3 +13,6 @@ The images after they're saved by PIL will also be smaller in size
 #### clean_resize_JPG.py
 added the functionality to also resize images. 
 ![3](screenshots/3.png)<br>
+<br>
+added code to skip non-images
+![3](screenshots/4.png)<br>
