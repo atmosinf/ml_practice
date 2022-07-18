@@ -8,4 +8,8 @@ The images after they're saved by PIL will also be smaller in size
 ![1](screenshots/1.png)<br>
 
 #### directory structure example (git does not add empty folders. images were excluded with the gitignore)
-![1](screenshots/2.png)<br>
+![2](screenshots/2.png)<br>
+
+#### clean_resize_JPG.py
+added the functionality to also resize images. 
+![3](screenshots/3.png)<br>
