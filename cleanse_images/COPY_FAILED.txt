@@ -1,3 +1,4 @@
+animals_africa/Aardvark/test_try_except.ini
 animals_africa/Blank/A0105151.JPG
 animals_africa/Blank/A0105183.JPG
 animals_africa/Blank/A0111604.JPG

@@ -38,10 +38,15 @@ def run():
     savedlist = []
     failedlist = []
     for f in tqdm(filelist):
-        img = Image.open(f)
-        targetloc = f.replace(SOURCE_DIR, TARGET_DIR).replace('JPG','jpg')
         try:
-            img = img = img.resize(TARGET_SIZE)
+            img = Image.open(f)
+        except:
+            print(f'\nUnable to open {f}. Skipping..\n')
+
+        targetloc = f.replace(SOURCE_DIR, TARGET_DIR).replace('JPG','jpg')
+
+        try:
+            img = img.resize(TARGET_SIZE)
             img.save(targetloc)
             savedlist.append(f)
         except:
