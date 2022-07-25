@@ -4,6 +4,12 @@ This will get rid of all corrupt images (corrupt images might cause a model trai
 The images after they're saved by PIL will also be smaller in size
 '''
 
+'''
+Create a function that copies over a folder (preserving the folder hierachy) with all its images, saving each image using PIL. 
+This will get rid of all corrupt images (corrupt images might cause a model training session to crash in the middle of training).
+The images after they're saved by PIL will also be smaller in size
+'''
+
 import os
 from PIL import Image 
 from tqdm import tqdm
@@ -26,8 +32,8 @@ def ig_f(dir, files):
     return [f for f in files if os.path.isfile(os.path.join(dir, f))]
 
 def run():
-    SOURCE_DIR = 'animals_africa'
-    TARGET_DIR = 'animals_africa_cleaned_resized_256'
+    SOURCE_DIR = 'Lope-Waka'
+    TARGET_DIR = 'Lope-Waka_256'
     TARGET_SIZE = (341, 256) # calculated using 256 as the smaller dim (height in this case). the width is calculated using 256 and the aspect ratio of the source image. all source images had the same aspect ratio for this test. 
 
     # copy over the directory tree, excluding the files
@@ -41,16 +47,17 @@ def run():
         try:
             img = Image.open(f)
         except:
-            print(f'\nUnable to open {f}. Skipping..\n')
+            print(f'\n{f} is not an image file. Skipping..\n')
 
         targetloc = f.replace(SOURCE_DIR, TARGET_DIR).replace('JPG','jpg')
-
+        
         try:
             img = img.resize(TARGET_SIZE)
             img.save(targetloc)
             savedlist.append(f)
         except:
             failedlist.append(f)
+            print(f'\n{f} could not be saved\n')
     
     with open('COPY_SUCCESSFUL.txt', 'w') as f:
         for line in savedlist:
