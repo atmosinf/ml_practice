@@ -47,8 +47,8 @@ def run():
         try:
             img = Image.open(f)
         except:
-            print(f'\n{f} is not an image file. Skipping..\n')
-
+            print(f'\n{f} cannot be opened. Skipping..\n')
+            failedlist.append(f)   
         targetloc = f.replace(SOURCE_DIR, TARGET_DIR).replace('JPG','jpg')
         
         try:
