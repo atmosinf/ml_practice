@@ -40,8 +40,8 @@ def run():
         try:
             img = Image.open(f)
         except:
-            print(f'\n{f} cannot be opened. Skipping..\n')
             failedlist.append(f)   
+            print(f'\n{f} cannot be opened. Skipping..\n')
         targetloc = f.replace(SOURCE_DIR, TARGET_DIR).replace('JPG','jpg')
         
         try:
@@ -49,6 +49,7 @@ def run():
             savedlist.append(f)
         except:
             failedlist.append(f)
+            print(f'\n{f} could not be saved\n')
     
     with open('COPY_SUCCESSFUL.txt', 'w') as f:
         for line in savedlist:
