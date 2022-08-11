@@ -14,7 +14,7 @@ import os
 from PIL import Image 
 from tqdm import tqdm
 import shutil
-
+import sys
 
 def get_filelist(dirname):
     filelist = os.listdir(dirname)
@@ -46,6 +46,12 @@ def run():
     for f in tqdm(filelist):
         try:
             img = Image.open(f)
+        except KeyboardInterrupt:
+            print('Interrupted')
+            try:
+                sys.exit(0)
+            except SystemExit:
+                os._exit(0)
         except:
             failedlist.append(f)
             print(f'\n{f} cannot be opened. Skipping..\n')   
@@ -55,6 +61,12 @@ def run():
             img = img.resize(TARGET_SIZE)
             img.save(targetloc)
             savedlist.append(f)
+        except KeyboardInterrupt:
+            print('Interrupted')
+            try:
+                sys.exit(0)
+            except SystemExit:
+                os._exit(0)
         except:
             failedlist.append(f)
             print(f'\n{f} could not be saved\n')
